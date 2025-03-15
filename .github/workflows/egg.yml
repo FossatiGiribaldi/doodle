@@ -31,8 +31,10 @@ jobs:
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
 
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: result
-          path: ./downloads
+      - name: Commit and push changes
+        run: |
+         git config --global user.name "fo"
+         git config --global user.email "FossatiGiribaldi@gmail.com"
+         git add .
+         git commit -m "Update"
+         git push -u origin master
