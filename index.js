@@ -15,7 +15,7 @@ const fs = require('fs');
   const title = await page.title();
 
   // 将标题保存到文件中
-  fs.writeFileSync('crawler-result.txt', title);
+  fs.writeFileSync('result.txt', title);
 
   await browser.close();
 })();
