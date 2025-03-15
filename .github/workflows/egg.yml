@@ -4,7 +4,6 @@ on:
   push:
     branches: [master]
 
-
 permissions:
   contents: read
   actions: write
@@ -19,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Install dependencies
         run: npm install
@@ -32,5 +31,8 @@ jobs:
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
 
-      - name: Download All Artifacts
+      - name: Download Artifact
         uses: actions/download-artifact@v4
+        with:
+          name: result
+          path: ./downloads
