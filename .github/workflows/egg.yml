@@ -26,3 +26,8 @@ jobs:
         run: node index.js
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+         name: screenshot
