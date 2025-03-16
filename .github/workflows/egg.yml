@@ -26,6 +26,9 @@ jobs:
       - name: Install Chromium
         run: sudo apt-get update && sudo apt-get install -y chromium-browser
 
+      - name: Print Chromium path
+        run: echo $PUPPETEER_EXECUTABLE_PATH
+
       - name: Run crawler
         run: node index.js
         env:
@@ -39,3 +42,9 @@ jobs:
         with:
           name: result
           path: result.txt 
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.S_TOKEN }}
+          branch: master  # 推送到的分支   
