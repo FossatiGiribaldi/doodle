@@ -5,8 +5,9 @@ on:
     branches: [master]
 
 permissions:
-  contents: read
+  contents: write
   actions: write
+
 
 jobs:
   crawl:
@@ -42,6 +43,8 @@ jobs:
         with:
           name: result
           path: result.txt 
+
+          
 
       - name: Commit changes
         run: |
