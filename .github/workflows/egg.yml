@@ -43,6 +43,14 @@ jobs:
           name: result
           path: result.txt 
 
+      - name: Commit changes
+        run: |
+          git config --global user.email "FossatiGiribaldi@gmail.com"
+          git config --global user.name "fo"
+          git add .
+          git commit -m "Automated commit by GitHub Actions"
+
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
